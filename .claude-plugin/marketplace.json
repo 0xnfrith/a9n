@@ -1,0 +1,12 @@
+{
+  "name": "a9n-dev",
+  "owner": { "name": "Nicholas Frith" },
+  "description": "Local dev marketplace for live iteration on the a9n plugin",
+  "plugins": [
+    {
+      "name": "a9n",
+      "source": "./",
+      "description": "AI-agnostic workflow orchestration (dev variant pointing at repo root)"
+    }
+  ]
+}

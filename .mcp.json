@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "a9n": {
+      "command": "bun",
+      "args": ["run", "--cwd", "${CLAUDE_PLUGIN_ROOT}", "--silent", "start"],
+      "env": {
+        "A9N_BASE_URL": "${user_config.base_url}",
+        "A9N_API_KEY": "${user_config.api_key}",
+        "A9N_MODEL": "${user_config.model}",
+        "A9N_WORKFLOWS_DIR": "${user_config.workflows_dir}"
+      }
+    }
+  }
+}

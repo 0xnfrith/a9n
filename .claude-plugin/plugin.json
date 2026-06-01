@@ -1,0 +1,44 @@
+{
+  "name": "a9n",
+  "version": "0.1.0",
+  "description": "AI-agnostic workflow orchestration. A port of Claude Code's Workflow tool whose agent() primitive hits any OpenAI-compatible LLM provider. Requires `bun` on PATH and an LLM endpoint + key.",
+  "author": {
+    "name": "Nicholas Frith"
+  },
+  "repository": "https://github.com/nfrith/a9n",
+  "license": "Apache-2.0",
+  "keywords": [
+    "workflow",
+    "orchestration",
+    "agents",
+    "mcp",
+    "ai-agnostic",
+    "llm"
+  ],
+  "userConfig": {
+    "base_url": {
+      "type": "string",
+      "title": "LLM base URL",
+      "description": "OpenAI-compatible base URL for the chat-completions endpoint (no trailing slash). Works with OpenAI, Anthropic-compatible gateways, Groq, OpenRouter, Ollama, vLLM, etc. Falls back to OPENAI_BASE_URL, then https://api.openai.com/v1.",
+      "default": "https://api.openai.com/v1"
+    },
+    "api_key": {
+      "type": "string",
+      "title": "LLM API key",
+      "description": "Bearer token for the endpoint. Falls back to the OPENAI_API_KEY environment variable when left blank. Leave blank for keyless local endpoints (e.g. Ollama).",
+      "default": ""
+    },
+    "model": {
+      "type": "string",
+      "title": "Default model",
+      "description": "Model id used by agent() calls that don't pass their own `model`. Falls back to OPENAI_MODEL, then gpt-4o-mini.",
+      "default": "gpt-4o-mini"
+    },
+    "workflows_dir": {
+      "type": "string",
+      "title": "Saved workflows directory",
+      "description": "Optional directory searched when a script calls workflow(\"<name>\") or the tool is invoked with a `name`. Looks for <name>.workflow.js. Falls back to the plugin's bundled workflows/ directory.",
+      "default": ""
+    }
+  }
+}
